@@ -1,0 +1,53 @@
+.error {
+    color: orangered;
+}
+
+#container {
+    width: 920px;
+    margin: 0 auto;
+    padding: 0 2.25em;
+}
+
+#content {
+    width: 820px;
+    margin-bottom: 2.25em;
+}
+
+.markdown-body {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    font-family: "Playfair Display", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a .fab {
+    color: black;
+}
+
+project-list section,
+contributor-list section {
+    margin: 0.4em;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+header .logo {
+    float: left;
+    padding-right: 1em;
+}
+
+header .fab {
+    color: #888888;
+    display: block;
+    float: right;
+    padding-top: 0.5em;
+    font-size: 85%;
+}

@@ -1,0 +1,28 @@
+<project-list>
+    <p if="{opts.repositories.length == 0}" class="error">
+        Sorry, something went wrong, please visit
+        <a href="https://github.com/dogmatiq">GitHub</a> instead.
+    </p>
+
+    <section class="repository" each={opts.repositories}>
+        <i class="fas fa-angle-right"></i>
+        <strong><a href="{homepage}">{name}</a></strong>
+        &mdash; {description}
+    </section>
+
+    <script>
+        opts.repositories.sort(
+            function (left, right) {
+                if (left.stargazers_count < right.stargazers_count) {
+                    return 1;
+                }
+
+                if (left.stargazers_count > right.stargazers_count) {
+                    return -1;
+                }
+
+                return 0;
+            }
+        );
+    </script>
+</project-list>
