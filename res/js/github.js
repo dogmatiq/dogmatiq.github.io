@@ -5,11 +5,17 @@ var github = new GitHub({token: '20c7969d26605b4d2de4bafc486e2637ec482930'});
 github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) {
     var repos = [];
 
-    if (!err) {
+    if (err) {
+        console.log(err)
+    } else {
         for (var i = 0; i < repositories.length; ++i) {
             var repo = repositories[i];
 
-            if (repo.homepage) {
+            if (repo.name == "dogmatiq.github.io") {
+                continue;
+            }
+
+            if (repo.has_pages) {
                 repos.push(repo)
             }
         }

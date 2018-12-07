@@ -26,6 +26,7 @@
     font-family: "Playfair Display", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+a .fas,
 a .fab {
     color: black;
 }
@@ -33,6 +34,10 @@ a .fab {
 project-list section,
 contributor-list section {
     margin: 0.4em;
+}
+
+project-list section .icons {
+    margin-left: 0.4em;
 }
 
 header {
