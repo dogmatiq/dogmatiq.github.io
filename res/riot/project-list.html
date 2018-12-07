@@ -6,12 +6,12 @@
 
     <section class="repository" each={opts.repositories}>
         <i class="fas fa-angle-right"></i>
-        <strong><a href="{name}">{name}</a></strong>
+        <strong><a href="{primary_link_url}">{name}</a></strong>
 
         &mdash; {description}
 
         <span class="icons">
-            <a if="{language == 'Go'}" href="https://godoc.org/github.com/{full_name}"><i class="fas fa-book"></i></a>
+            <a if="{go_doc_url}" href="{go_doc_url}"><i class="fas fa-book"></i></a>
             <a href="{html_url}"><i class="fab fa-github"></i></a>
         </span>
     </section>

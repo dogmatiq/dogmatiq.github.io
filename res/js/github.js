@@ -11,13 +11,23 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
         for (var i = 0; i < repositories.length; ++i) {
             var repo = repositories[i];
 
-            if (repo.name == "dogmatiq.github.io") {
+            if (!repo.has_issues) {
                 continue;
             }
 
-            if (repo.has_pages) {
-                repos.push(repo)
+            if (repo.language == "Go") {
+                repo.go_doc_url = "https://godoc.org/github.com/"+repo.full_name
             }
+
+            if (repo.has_pages) {
+                repo.primary_link_url = repo.name + "/"
+            } else if (repo.go_doc_url) {
+                repo.primary_link_url = repo.go_doc_url
+            } else {
+                repo.primary_link_url = repo.http_url
+            }
+
+            repos.push(repo)
         }
     }
 
