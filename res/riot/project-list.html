@@ -1,34 +1,33 @@
 <project-list>
-    <p if="{opts.repositories.length == 0}" class="error">
+    <p if="{opts.err}" class="error">
         Sorry, something went wrong, please visit
         <a href="https://github.com/dogmatiq">GitHub</a> instead.
     </p>
 
-    <section class="repository" each={opts.repositories}>
-        <i class="fas fa-angle-right"></i>
-        <strong><a href="{primary_link_url}">{name}</a></strong>
+    <section class="category" if="{!opts.err}" each={opts.categories}>
+        <h3>{title}</h3>
 
-        &mdash; {description}
+        <p>{desc}</p>
 
-        <span class="icons">
-            <a if="{go_doc_url}" href="{go_doc_url}"><i class="fas fa-book"></i></a>
-            <a href="{html_url}"><i class="fab fa-github"></i></a>
-        </span>
+        <section class="repository" each={repos}>
+            <i class="fas fa-angle-right"></i>
+            <strong><a href="{url}" title="View on GitHub">{name}</a></strong>
+
+            &mdash; {desc}
+
+            <span class="icons">
+                <a if="{godoc}" href="{godoc}" title="View Go documentation"><i class="fas fa-book"></i></a>
+            </span>
+        </section>
     </section>
 
     <script>
-        opts.repositories.sort(
-            function (left, right) {
-                if (left.stargazers_count < right.stargazers_count) {
-                    return 1;
+        for (k in opts.categories) {
+            opts.categories[k].repos.sort(
+                function (left, right) {
+                    return left.name.localeCompare(right.name)
                 }
-
-                if (left.stargazers_count > right.stargazers_count) {
-                    return -1;
-                }
-
-                return 0;
-            }
-        );
+            );
+        }
     </script>
 </project-list>

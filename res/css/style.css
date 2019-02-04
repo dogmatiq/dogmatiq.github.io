@@ -33,11 +33,20 @@ a .fab {
 
 project-list section,
 contributor-list section {
-    margin: 0.4em;
+    margin: 0.2em;
+}
+
+project-list section.category {
+    margin-bottom: 1.5em;
+}
+
+project-list section.repository,
+contributor-list section.contributor {
+    margin-left: 0.5em;
 }
 
 project-list section .icons {
-    margin-left: 0.4em;
+    margin-left: 0.2em;
 }
 
 header {
