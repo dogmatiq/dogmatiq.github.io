@@ -32,7 +32,7 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
             var r = {
                 name: repo.name,
                 desc: repo.description,
-                url: repo.html_url,
+                url: repo.html_url+'#readme',
             }
 
             if (repo.language == "Go") {
