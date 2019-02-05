@@ -5,7 +5,9 @@
     </p>
 
     <section class="category" if="{!opts.err}" each={opts.categories}>
-        <h3>{title}</h3>
+        <h3 id="{id}" class="anchor-header">
+            <a class="anchor-link" href="#{id}"><img class="opticon" src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.3.0/svg/link.svg"></img></a>{title}
+        </h3>
 
         <p>{desc}</p>
 

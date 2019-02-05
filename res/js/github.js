@@ -4,18 +4,21 @@ var github = new GitHub({token: '20c7969d26605b4d2de4bafc486e2637ec482930'});
 
 github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) {
     var dogma = {
+        id: "dogma",
         title: "Dogma",
         desc: "A suite of tools for developing message-based distributed applications in Go.",
         repos: [],
     }
 
     var engines = {
+        id: "dogma-engines",
         title: "Dogma Engines",
         desc: "Dogma engine implementations and utilities for engine developers.",
         repos: [],
     }
 
     var libraries = {
+        id: "libraries",
         title: "Libraries",
         desc: "Standalone Go modules that were developed in support of other Dogmatiq projects.",
         repos: [],
