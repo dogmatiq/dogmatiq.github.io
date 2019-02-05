@@ -31,5 +31,13 @@
                 }
             );
         }
+
+        if (location.hash) {
+            this.on('mount', function () {
+                var hash = location.hash.slice(1);
+                location.hash = '';
+                location.hash = hash;
+            })
+        }
     </script>
 </project-list>
