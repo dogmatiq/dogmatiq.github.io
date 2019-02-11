@@ -19,7 +19,7 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
 
     var libraries = {
         id: "libraries",
-        title: "Libraries",
+        title: "Supporting Libraries",
         desc: "Standalone Go modules that were developed in support of other Dogmatiq projects.",
         repos: [],
     }
