@@ -39,7 +39,7 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
             }
 
             if (repo.language == "Go") {
-                r.godoc = "https://godoc.org/github.com/"+repo.full_name
+                r.godoc = "https://pkg.go.dev/github.com/"+repo.full_name
             }
 
             if (repo.name.match(/\bengine\b/i) || repo.description.match(/\bengine\b/i)) {
