@@ -32,6 +32,10 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
         for (var i = 0; i < repositories.length; ++i) {
             var repo = repositories[i];
 
+            if (repo.archived) {
+                continue;
+            }
+
             var r = {
                 name: repo.name,
                 desc: repo.description,
