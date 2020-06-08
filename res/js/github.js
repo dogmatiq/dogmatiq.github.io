@@ -1,6 +1,6 @@
 "use strict";
 
-var github = new GitHub({token: '20c7969d26605b4d2de4bafc486e2637ec482930'});
+var github = new GitHub();
 
 github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) {
     var dogma = {
