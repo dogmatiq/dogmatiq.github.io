@@ -39,7 +39,12 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
             if (repo.name.match(/spec$/i)) {
                 // Skip "<something>spec" repos which only contain protocol
                 // buffers specifications used by other repos.
-                continue
+                continue;
+            }
+
+            if (repo.description.match(/internal/i)) {
+                // Skip "internal" packages.
+                continue;
             }
 
             var r = {
