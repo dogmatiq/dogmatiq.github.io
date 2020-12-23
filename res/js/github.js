@@ -36,12 +36,6 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
                 continue;
             }
 
-            if (repo.name.match(/spec$/i)) {
-                // Skip "<something>spec" repos which only contain protocol
-                // buffers specifications used by other repos.
-                continue;
-            }
-
             if (repo.description.match(/internal/i)) {
                 // Skip "internal" packages.
                 continue;
@@ -57,7 +51,7 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
                 r.godoc = "https://pkg.go.dev/github.com/"+repo.full_name
             }
 
-            if (repo.name.match(/\bengine\b/i) || repo.description.match(/\bengine\b/i)) {
+            if (repo.name.match(/\bengines?\b/i) || repo.description.match(/\bengines?\b/i)) {
                 engines.repos.push(r)
             } else if (repo.name.match(/\bdogma\b/i) || repo.description.match(/\bdogma\b/i)) {
                 dogma.repos.push(r)
