@@ -2,7 +2,7 @@
 
 var github = new GitHub();
 
-github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) {
+github.get('orgs/dogmatiq/repos?type=public', {all: true}, function(err, repositories) {
     var dogma = {
         id: "dogma",
         title: "Dogma",
@@ -33,11 +33,12 @@ github.get('orgs/dogmatiq/repos?type=public', null, function(err, repositories) 
             var repo = repositories[i];
 
             if (repo.archived) {
+                console.log(repo.name, "ignoring archived repo")
                 continue;
             }
 
             if (repo.description.match(/internal/i)) {
-                // Skip "internal" packages.
+                console.log(repo.name, "ignoring internal repo")
                 continue;
             }
 

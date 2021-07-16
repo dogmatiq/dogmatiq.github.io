@@ -27,16 +27,14 @@
         for (k in opts.categories) {
             opts.categories[k].repos.sort(
                 function (left, right) {
-                    lkit = left.name.endsWith("kit")
-                    rkit = right.name.endsWith("kit")
+                    ldogma = left.name.startsWith("dogma")
+                    rdogma = right.name.startsWith("dogma")
 
-                    if (lkit && !rkit) {
-                        return 1
-                    } else if (rkit && !lkit) {
-                        return -1
+                    if (ldogma == rdogma) {
+                        return left.name.localeCompare(right.name)
                     }
 
-                    return left.name.localeCompare(right.name)
+                    return rdogma - ldogma
                 }
             );
         }
